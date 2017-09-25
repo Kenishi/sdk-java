@@ -1,7 +1,6 @@
 package com.ticketmaster.discovery.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.*;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -40,14 +39,17 @@ public class Event extends ResourceSupport {
   private Set<PriceRange> priceRanges;
   private Source source;
 
+  @JsonIgnore
   public List<Venue> getVenues() {
     return embedded != null ? embedded.getVenues() : null;
   }
-
+  
+  @JsonIgnore
   public List<Attraction> getAttractions() {
     return embedded != null ? embedded.getAttractions() : null;
   }
 
+  @JsonIgnore
   public List<Category> getCategories() {
     return embedded != null ? embedded.getCategories() : null;
   }
