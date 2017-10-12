@@ -1,6 +1,7 @@
 package com.ticketmaster.api.discovery.response;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,11 +28,11 @@ public class PagedResponse<T> extends Response<T> {
     this.content = page.getEmbedded();
   }
 
-  public T getContent() {
-    if (content == null) {
+  public Optional<T> getContent() {
+    if (page == null && content == null) {
       readContent();
     }
-    return content;
+    return Optional.ofNullable(content);
   }
 
   public Link getNextPageLink() {

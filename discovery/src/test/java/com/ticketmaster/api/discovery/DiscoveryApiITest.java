@@ -40,7 +40,7 @@ public class DiscoveryApiITest {
       PagedResponse<Events> response =
           api.searchEvents(new SearchEventsOperation().pageSize(500).pageNumber(i));
 
-      for (Event event : response.getContent().getEvents()) {
+      for (Event event : response.getContent().get().getEvents()) {
         validateEmptyOtherProperties(event);
       }
     }
@@ -52,7 +52,7 @@ public class DiscoveryApiITest {
       PagedResponse<Attractions> response =
           api.searchAttractions(new SearchAttractionsOperation().pageSize(500).pageNumber(i));
 
-      for (Attraction attraction : response.getContent().getAttractions()) {
+      for (Attraction attraction : response.getContent().get().getAttractions()) {
         validateEmptyOtherProperties(attraction);
       }
     }
@@ -64,7 +64,7 @@ public class DiscoveryApiITest {
       PagedResponse<Venues> response =
           api.searchVenues(new SearchVenuesOperation().pageSize(500).pageNumber(i));
 
-      for (Venue venue : response.getContent().getVenues()) {
+      for (Venue venue : response.getContent().get().getVenues()) {
         validateEmptyOtherProperties(venue);
       }
     }

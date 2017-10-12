@@ -1,6 +1,7 @@
 package com.ticketmaster.api.discovery.response;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import lombok.Getter;
 
@@ -24,11 +25,11 @@ public class Response<T> {
     this.httpResponse = httpResponse;
   }
 
-  public T getContent() throws IOException {
+  public Optional<T> getContent() throws IOException {
     if (content == null) {
       readContent();
     }
-    return content;
+    return Optional.ofNullable(content);
   }
 
   protected void readContent() throws IOException {
