@@ -17,8 +17,8 @@ subprojects {
   apply plugin: 'nebula.optional-base'
   apply plugin: 'nebula.provided-base'
   
-  targetCompatibility = "1.7"
-  sourceCompatibility = "1.7"
+  targetCompatibility = "1.8"
+  sourceCompatibility = "1.8"
   
   repositories {
       mavenCentral()
