@@ -14,9 +14,11 @@ buildscript {
 subprojects {
   apply plugin: 'idea'
   apply plugin: 'java'
+  apply plugin: 'maven'
   apply plugin: 'nebula.optional-base'
   apply plugin: 'nebula.provided-base'
   
+  group = 'com.github.Kenishi'
   targetCompatibility = "1.8"
   sourceCompatibility = "1.8"
   
